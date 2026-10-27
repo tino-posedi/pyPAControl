@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pypacontrol"
+version = "0.1.0rc3"
+description = "Independent Python toolkit for IEF-Werner PA-CONTROL communication"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "pyPAControl contributors"}]
+dependencies = []
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.optional-dependencies]
+serial = ["pyserial>=3.5"]
+usb = ["pyserial>=3.5"]
+all = ["pyserial>=3.5"]
+dev = ["pytest>=8", "pyserial>=3.5", "build>=1"]
+
+[project.scripts]
+pypacontrol = "pypacontrol.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
